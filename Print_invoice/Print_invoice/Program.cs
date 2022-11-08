@@ -1,17 +1,36 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+
 namespace Print_invoice
 {
-    internal static class Program
+    public class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+        }
+
+        public DataTable ShowAllProduct()
+        {
+            Provider p = new Provider();
+            DataTable dt = null;
+            try
+            {
+                string strSQL = "sp_ShowAllProduct";
+                p.Connect();
+                dt = p.ExcecuteQuery(CommandType.StoredProcedure, strSQL);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                p.DisConnect();
+            }
+            return dt;
         }
     }
 }

@@ -1,3 +1,7 @@
+using Print_invoice;
+using System.Data;
+using System.Data.SqlClient;
+
 namespace Print_invoice
 {
     public partial class Form1 : Form
@@ -49,8 +53,24 @@ namespace Print_invoice
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+                Provider p = new Provider();
+                DataTable dt = null;
+                try
+                {
+                    string strSQL = "sp_ShowAllProduct";
+                    p.Connect();
+                    dt = p.ExcecuteQuery(CommandType.StoredProcedure, strSQL);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    p.DisConnect();
+                }
         }
+
 
         private void progressBar2_Click(object sender, EventArgs e)
         {
@@ -66,5 +86,32 @@ namespace Print_invoice
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //
+        /*        public DataTable ShowAllProduct()
+                {
+                    Provider p = new Provider();
+                    DataTable dt = null;
+                    try
+                    {
+                        string strSQL = "sp_ShowAllProduct";
+                        p.Connect();
+                        dt = p.ExcecuteQuery(CommandType.StoredProcedure, strSQL);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        p.DisConnect();
+                    }
+                    return dt;
+                }*/
     }
 }
