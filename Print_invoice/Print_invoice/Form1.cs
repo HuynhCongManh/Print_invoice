@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Print_invoice;
 using System.Data;
 using System.Data.SqlClient;
@@ -6,11 +7,30 @@ namespace Print_invoice
 {
     public partial class Form1 : Form
     {
+        string ConnectionString = @"Data Source = WS-1067\SQLEXPRESS ;Initial Catalog= cosmetic ;User ID=sa;Password=123456";
+        SqlConnection ketnoi;
+        SqlCommand thuchien;
+        SqlDataReader docdulieu;
+        int i = 0;
+        string sql;
         public Form1()
         {
             InitializeComponent();
-        }
+            ketnoi = new SqlConnection(ConnectionString);
+            ketnoi.Open();
+            sql = @"SELECT TENSP from SANPHAM";
+            thuchien = new SqlCommand(sql, ketnoi);
+            docdulieu = thuchien.ExecuteReader();
+            i = 0;
+            while (docdulieu.Read())
+            {
+                cbTenSP.Items.Add(docdulieu[0].ToString());
+                i++;
 
+            }
+            ketnoi.Close();
+        }
+    
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -53,7 +73,7 @@ namespace Print_invoice
 
         private void button1_Click(object sender, EventArgs e)
         {
-                Provider p = new Provider();
+                /*Provider p = new Provider();
                 DataTable dt = null;
                 try
                 {
@@ -68,7 +88,7 @@ namespace Print_invoice
                 finally
                 {
                     p.DisConnect();
-                }
+                }*/
         }
 
 
@@ -90,6 +110,23 @@ namespace Print_invoice
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cbTenSP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*MessageBox.Show("aaaaa");
+            ketnoi.Open();
+            sql = @"SELECT TENSP from SANPHAM";
+            thuchien = new SqlCommand(sql,ketnoi);
+            docdulieu = thuchien.ExecuteReader();
+            i = 0;
+            while (docdulieu.Read())
+            {
+                cbTenSP.Items.Add(docdulieu[1].ToString());
+                i++;
+
+            }
+            ketnoi.Close();*/
         }
 
         //

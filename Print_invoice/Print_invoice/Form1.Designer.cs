@@ -40,9 +40,12 @@
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.dateNgayBan = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtTENSP = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,9 +64,6 @@
             this.btnHuyHD = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -96,54 +96,53 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(39, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 26);
+            this.label2.Size = new System.Drawing.Size(123, 26);
             this.label2.TabIndex = 3;
-            this.label2.Text = "     Mã hóa đơn";
+            this.label2.Text = "Mã hóa đơn";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(39, 182);
+            this.label3.Location = new System.Drawing.Point(626, 120);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 26);
+            this.label3.Size = new System.Drawing.Size(100, 26);
             this.label3.TabIndex = 4;
-            this.label3.Text = "     Ngày bán";
+            this.label3.Text = "Ngày bán";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(626, 120);
+            this.label4.Location = new System.Drawing.Point(39, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 26);
+            this.label4.Size = new System.Drawing.Size(78, 26);
             this.label4.TabIndex = 5;
-            this.label4.Text = "     Mã KH";
+            this.label4.Text = "Mã KH";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(626, 185);
+            this.label5.Location = new System.Drawing.Point(626, 187);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(115, 26);
+            this.label5.Size = new System.Drawing.Size(85, 26);
             this.label5.TabIndex = 6;
-            this.label5.Text = "     Tên KH";
+            this.label5.Text = "Tên KH";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtMaHD
             // 
+            this.txtMaHD.Enabled = false;
             this.txtMaHD.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHD.Location = new System.Drawing.Point(220, 117);
             this.txtMaHD.Name = "txtMaHD";
@@ -152,10 +151,11 @@
             // 
             // txtMaKH
             // 
+            this.txtMaKH.Enabled = false;
             this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaKH.Location = new System.Drawing.Point(772, 117);
+            this.txtMaKH.Location = new System.Drawing.Point(220, 182);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(378, 34);
+            this.txtMaKH.Size = new System.Drawing.Size(343, 34);
             this.txtMaKH.TabIndex = 8;
             // 
             // txtTenKH
@@ -170,9 +170,9 @@
             // 
             this.dateNgayBan.CalendarFont = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateNgayBan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateNgayBan.Location = new System.Drawing.Point(220, 178);
+            this.dateNgayBan.Location = new System.Drawing.Point(772, 112);
             this.dateNgayBan.Name = "dateNgayBan";
-            this.dateNgayBan.Size = new System.Drawing.Size(343, 34);
+            this.dateNgayBan.Size = new System.Drawing.Size(378, 34);
             this.dateNgayBan.TabIndex = 10;
             this.dateNgayBan.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -191,17 +191,40 @@
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // MASP
+            // 
+            this.MASP.DataPropertyName = "MASP";
+            this.MASP.HeaderText = "Mã SP";
+            this.MASP.MinimumWidth = 6;
+            this.MASP.Name = "MASP";
+            this.MASP.Width = 125;
+            // 
+            // TENSP
+            // 
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.HeaderText = "Tên SP";
+            this.TENSP.MinimumWidth = 6;
+            this.TENSP.Name = "TENSP";
+            this.TENSP.Width = 125;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn Giá";
+            this.DONGIA.MinimumWidth = 6;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Width = 125;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label6.Location = new System.Drawing.Point(287, 435);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 26);
+            this.label6.Size = new System.Drawing.Size(102, 26);
             this.label6.TabIndex = 12;
-            this.label6.Text = "     Tìm kiếm";
+            this.label6.Text = "Tìm kiếm";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtTimKiem
@@ -212,18 +235,17 @@
             this.txtTimKiem.Size = new System.Drawing.Size(453, 34);
             this.txtTimKiem.TabIndex = 13;
             // 
-            // label7
+            // txtTENSP
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(39, 298);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 26);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "     Tên SP";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.txtTENSP.AutoSize = true;
+            this.txtTENSP.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTENSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtTENSP.Location = new System.Drawing.Point(39, 298);
+            this.txtTENSP.Name = "txtTENSP";
+            this.txtTENSP.Size = new System.Drawing.Size(80, 26);
+            this.txtTENSP.TabIndex = 14;
+            this.txtTENSP.Text = "Tên SP";
+            this.txtTENSP.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -249,13 +271,12 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label9.Location = new System.Drawing.Point(39, 363);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 26);
+            this.label9.Size = new System.Drawing.Size(96, 26);
             this.label9.TabIndex = 18;
-            this.label9.Text = "     Số lượng";
+            this.label9.Text = "Số lượng";
             // 
             // label10
             // 
@@ -310,13 +331,12 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
             this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label11.Location = new System.Drawing.Point(772, 363);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 26);
+            this.label11.Size = new System.Drawing.Size(112, 26);
             this.label11.TabIndex = 23;
-            this.label11.Text = "     Thành tiền";
+            this.label11.Text = "Thành tiền";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // txtThanhTien
@@ -330,12 +350,13 @@
             // 
             // cbTenSP
             // 
-            this.cbTenSP.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbTenSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbTenSP.FormattingEnabled = true;
-            this.cbTenSP.Location = new System.Drawing.Point(220, 294);
+            this.cbTenSP.Location = new System.Drawing.Point(220, 293);
             this.cbTenSP.Name = "cbTenSP";
-            this.cbTenSP.Size = new System.Drawing.Size(343, 34);
+            this.cbTenSP.Size = new System.Drawing.Size(343, 30);
             this.cbTenSP.TabIndex = 25;
+            this.cbTenSP.SelectedIndexChanged += new System.EventHandler(this.cbTenSP_SelectedIndexChanged);
             // 
             // btnThemHD
             // 
@@ -442,30 +463,6 @@
             this.textBox1.Size = new System.Drawing.Size(215, 34);
             this.textBox1.TabIndex = 34;
             // 
-            // MASP
-            // 
-            this.MASP.DataPropertyName = "MASP";
-            this.MASP.HeaderText = "Mã SP";
-            this.MASP.MinimumWidth = 6;
-            this.MASP.Name = "MASP";
-            this.MASP.Width = 125;
-            // 
-            // TENSP
-            // 
-            this.TENSP.DataPropertyName = "TENSP";
-            this.TENSP.HeaderText = "Tên SP";
-            this.TENSP.MinimumWidth = 6;
-            this.TENSP.Name = "TENSP";
-            this.TENSP.Width = 125;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn Giá";
-            this.DONGIA.MinimumWidth = 6;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.Width = 125;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -489,7 +486,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtTENSP);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
@@ -526,7 +523,7 @@
         private DataGridView dataGridView1;
         private Label label6;
         private TextBox txtTimKiem;
-        private Label label7;
+        private Label txtTENSP;
         private Label label8;
         private TextBox txtDonGia;
         private Label label9;

@@ -59,3 +59,5 @@ D:\Invoice\Print_Invoice\Print_invoice\Print_invoice\Print_invoice\bin\Debug\net
 D:\Invoice\Print_Invoice\Print_invoice\Print_invoice\Print_invoice\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Invoice\Print_Invoice\Print_invoice\Print_invoice\Print_invoice\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Invoice\Print_Invoice\Print_invoice\Print_invoice\Print_invoice\obj\Debug\net6.0-windows\Print_invoice.csproj.CopyComplete
+D:\Invoice\Print_Invoice\Print_invoice\Print_invoice\Print_invoice\bin\Debug\net6.0-windows\Guna.Charts.WinForms.dll
+D:\Invoice\Print_Invoice\Print_invoice\Print_invoice\Print_invoice\bin\Debug\net6.0-windows\Guna.UI2.dll
